@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 
 import {Button, StyleSheet, Text, View} from 'react-native';
 
+import GoogleMapsService from '../utilities/GoogleMapsApi';
+
 export default class Eta extends Component {
 
   state = {
@@ -16,11 +18,21 @@ export default class Eta extends Component {
   }
 
   getGeoLocation = () => {
-    const onSuccess = () => this.setState({someText: 'We found it!'});
+    //const onSuccess = (po) => this.getDirections(position);
     const onError = () => this.setState({someText: 'Shit went wrong'});
-    return navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    return navigator.geolocation.getCurrentPosition(this.getDirections, onError);
+  }
+
+  getDirections = (position) => {
+    GoogleMapsService.getDirections('', '',this.outputResult)
+
+  }
+
+  outputResult = (theResult) => {
+    this.setState({someText: JSON.stringify(theResult)});
   }
 }
+
 
 const styles = StyleSheet.create({
   eta: {
