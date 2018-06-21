@@ -60,7 +60,7 @@ export default class Eta extends Component {
 
   getGeoLocation = () => {
     const onSuccess = (pos) => this.setState({currentPosition: pos});
-    const onError = () => this.setState({someText: 'Shit went wrong'});
+    const onError = (err) => this.setState({someText: err.message});
     return navigator.geolocation.getCurrentPosition(onSuccess, onError);
   }
 }
