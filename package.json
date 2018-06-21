@@ -10,9 +10,12 @@
   },
   "dependencies": {
     "@google/maps": "^0.4.6",
+    "moment": "^2.22.2",
+    "native-base": "^2.6.0",
     "react": "16.3.1",
     "react-native": "0.55.4",
-    "react-native-google-maps-services": "^0.5.1"
+    "react-native-google-maps-services": "^0.5.1",
+    "react-native-vector-icons": "^4.6.0"
   },
   "devDependencies": {
     "babel-jest": "23.0.1",
