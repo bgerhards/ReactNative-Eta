@@ -10,7 +10,7 @@ var googleMapsClient = require('react-native-google-maps-services').createClient
 
 export default class Eta extends Component {
   state = {
-    someText: '',
+    estimatedArrivalTime: '',
     currentPosition: null,
     destination: '1111 6th ave, des moines, ia 50314'
   }
